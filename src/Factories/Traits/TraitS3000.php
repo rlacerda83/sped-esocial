@@ -83,7 +83,7 @@ trait TraitS3000
         //$this->xml = $this->dom->saveXML($this->eSocial);
         $this->sign();
     }
-    
+
     /**
      * builder for version S.1.0.0
      */
@@ -141,8 +141,8 @@ trait TraitS3000
             $this->dom->addChild(
                 $ideFolhaPagto,
                 "indApuracao",
-                $this->std->idefolhapagto->indapuracao,
-                true
+                !empty($this->std->idefolhapagto->indapuracao) ? $this->std->idefolhapagto->indapuracao : null,
+                false
             );
             $this->dom->addChild(
                 $ideFolhaPagto,
